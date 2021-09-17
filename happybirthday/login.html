@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HAPPY BIRTHDAY!!!</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body{
+            font-family: "Comic Sans MS", "Comic Sans", cursive;
+            background: url("./bg2.jpg") no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            color: white;
+        }
+        .password{
+            text-align: center;
+        }
+        .error{
+            text-align: center; 
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div style="text-align: center; margin-top: 250px;">
+        <h1>
+            Nhập mật khẩu gồm 6 chữ số để đi tiếp
+        </h1>
+        <p style="animation: shake 4s; animation-iteration-count: infinite;">
+            Gợi ý: ngày đặc biệt hôm nay
+        </p>
+    </div>
+    <div class = password>
+        <input id="password"  style="display: inline;width: 400px;height:40px; font-size: 25px; background-color: transparent; border: 1px solid white; color: white;" type="text">
+        <button id="butn" class="butn" style="cursor: pointer;width: 100px; height: 40px; color: white; background-color: blue; font-weight: 200;"><b>Đăng nhập</b></button>
+    </div>
+
+    <div id="error" style="text-align: center; display: none;">
+        <h3>Sai mất rồi, hôm nay là ngày bao nhiêu nào? 😉</h3>
+    </div>
+    <div id="myModal2" class="modal2">
+    <div class="modal-content2">
+        <a class="close" href="./index.html" style="text-decoration: none;">&times;</a>
+        <div>
+            <h1 style="text-align: center;">Đăng nhập thành công !</h1>
+            <h6 style="text-align: center;">vào trái tim em hihi</h6>
+            <h6 style="text-align: center; color: blue;">___________</h6>
+        </div>        
+    </div>
+    </div>
+    <script>
+        const key = "190921"
+        var error = document.getElementById("error")
+        var input = document.getElementById("password");
+        var modal = document.getElementById("myModal2");
+        var btn = document.getElementById("butn");
+
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks on the button, open the modal
+        btn.onclick = function() {
+            if(input.value == key){
+                modal.style.display = "block";
+            }
+            else{
+                error.style.display = "block"
+            }
+        }
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+                window.location.href ="https://duong-pog.github.io/cmsn/happybirthday/index.html";
+            }
+        }
+
+        
+
+    </script>
+</body>
+</html>
